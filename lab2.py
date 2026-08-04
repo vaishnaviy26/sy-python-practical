@@ -1,42 +1,39 @@
-print("***Grossary Shop Billing Calculator***")
-rice_qty = float(input("Enter the quantity of rice(in kg):"))
-rice_price_per_kg =50
-rice_total =rice_qty *rice_price_per_kg
+# Simple Billing Calculator for Grocery Shop
 
+print("===== Grocery Shop Billing Calculator =====")
 
-sugar_qty = float(input("Enter the quantity of rice(in kg):"))
-sugar_price_per_kg = 40
-sugar_total = sugar_qty * sugar_price_per_kg
+# Input
+item1 = float(input("Enter price of Item 1: "))
+item2 = float(input("Enter price of Item 2: "))
+item3 = float(input("Enter price of Item 3: "))
 
+# Arithmetic Operator
+total_bill = item1 + item2 + item3
 
-oil_qty = float(input("Enter the quantity of oil(in litre):"))
-oil_price_per_litre = 120
-oil_total = oil_qty * oil_price_per_litre
-
-
-print("***Bill Details***")
-
-print("rice:",rice_total)
-print("sugar:",sugar_total)
-print("oil:,oil_total")
-
-Total_Bill = rice_total+sugar_total+oil_total
-print("Total Bill:".Total_Bill)
-
-Discount = 0
-if Total_Bill >=1000:
-
-    print("Discount:",Discount)
-    Discount = Total_Bill = 0.1
-
-elif Total_Bill >= 500:
-    Discount = Total_Bill = 0.05
-    print("Discount :",Discount)
-
-
+# Discount calculation
+if total_bill >= 1000:
+    discount = total_bill * 0.10   # 10% discount
+elif total_bill >= 500 and total_bill < 1000:
+    discount = total_bill * 0.05   # 5% discount
 else:
-    print("No Discount")
+    discount = 0
 
-    Final_Bill = Total_Bill - Discount
+# Final payable amount
+final_amount = total_bill - discount
 
-    print("Final Bill:",Final_Bill)
+# Relational and Logical Operators Example
+if total_bill >= 500 and total_bill < 1000:
+    category = "Eligible for 5% Discount"
+elif total_bill >= 1000:
+    category = "Eligible for 10% Discount"
+else:
+    category = "No Discount"
+
+# Output
+print("\n===== BILL =====")
+print("Total Bill      : ₹", total_bill)
+print("Discount        : ₹", discount)
+print("Final Amount    : ₹", final_amount)
+print("Status          :", category)
+
+print("\nThank You! Visit Again.")
