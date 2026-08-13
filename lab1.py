@@ -1,5 +1,3 @@
-# Student Introduction System
-
 print("===== Student Details =====")
 
 name = input("Enter your name: ")
